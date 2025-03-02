@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Noto_Serif, Source_Code_Pro } from "next/font/google";
+import { Theme } from "@radix-ui/themes";
+import "@radix-ui/themes/styles.css";
 import "./globals.css";
 
 const interSansSerif = Inter({
@@ -30,7 +32,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${interSansSerif.variable} ${notoSerif.variable} ${sourceCodeProMonospace.variable}`}>
-        {children}
+        <Theme>
+          {children}
+        </Theme>
       </body>
     </html>
   );
