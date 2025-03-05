@@ -1,8 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Flex, Box, Card, Heading, Text, TextField, Link as RadixLink, Button, Separator } from "@radix-ui/themes";
+import { InfoCircledIcon } from "@radix-ui/react-icons"
 
-export default function LoginPage() {
+export default function SignupPage() {
   return (
     <Flex align="center" justify="center" height="100vh">
       <Box width="540px">
@@ -12,8 +13,8 @@ export default function LoginPage() {
               <Image src="/logo.svg" alt="Note taking app Logo" width="95" height="28" />
             </Box>
             <Box style={{ alignSelf: "stretch" }}>
-              <Heading as="h2" mb="2" align="center">Welcome to Note</Heading>
-              <Text as="p" size="2" align="center">Please log in to continue</Text>
+              <Heading as="h2" mb="2" align="center">Create Your Account</Heading>
+              <Text as="p" size="2" align="center">Sign up to start organizing your notes and boost your productivity.</Text>
             </Box>
             <Flex direction="column" gap="4" style={{ alignSelf: "stretch" }}>
               <Box>
@@ -33,7 +34,7 @@ export default function LoginPage() {
                 />
               </Box>
               <Box>
-                <Flex align="center" justify="between" mb="1">
+                <Box mb="2">
                   <Text
                     as="label"
                     htmlFor="password"
@@ -42,17 +43,18 @@ export default function LoginPage() {
                   >
                     Password
                   </Text>
-                  <Link href="forgot" passHref legacyBehavior>
-                    <RadixLink size="2" weight="medium">Forgot password?</RadixLink>
-                  </Link>
+                  <TextField.Root
+                    placeholder="Enter your password"
+                    id="password"
+                  />
+                </Box>
+                <Flex align="center" gap="2">
+                  <InfoCircledIcon />
+                  <Text size="2">At least 8 characters</Text>
                 </Flex>
-                <TextField.Root
-                  placeholder="Enter your password"
-                  id="password"
-                />
               </Box>
               <Flex direction="column">
-                <Button>Login</Button>
+                <Button>Signup</Button>
               </Flex>
             </Flex>
             <Separator size="4" />
@@ -68,10 +70,10 @@ export default function LoginPage() {
             <Separator size="4" />
             <Box>
               <Text size="2">
-                Don&apos;t have an account?{" "}
-                <Link href="/auth/register" passHref legacyBehavior>
+                Already have an account? {" "}
+                <Link href="/auth/login" passHref legacyBehavior>
                   <RadixLink weight="medium">
-                    Sign Up!
+                    Login
                   </RadixLink>
                 </Link>
               </Text>
