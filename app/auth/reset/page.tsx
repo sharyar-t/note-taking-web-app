@@ -1,6 +1,5 @@
-import Link from "next/link";
 import Image from "next/image";
-import { Flex, Box, Card, Heading, Text, TextField, Link as RadixLink, Button, Separator } from "@radix-ui/themes";
+import { Flex, Box, Card, Heading, Text, TextField, Button } from "@radix-ui/themes";
 import { InfoCircledIcon } from "@radix-ui/react-icons"
 
 export default function ResetPage() {
